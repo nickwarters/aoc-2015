@@ -11,14 +11,6 @@ ieodomkazucvgmuy`,
 ]
 
 function hasPair(input: string) {
-	// let hasPair = false
-	// const seen = new Set()
-	// for (let i = 3; i < input.length; i++) {
-	// 	if (hasPair) break
-	// 	const slice = `${input.charAt(i - 1)}${input.charAt(i)}`
-	// 	hasPair = seen.has(slice)
-	// 	seen.add(slice)
-	// }
 	return input.match(/(..).*\1/)
 }
 
@@ -27,11 +19,7 @@ function letterBetweenPair(input: string) {
 }
 
 function isNice(input: string): boolean {
-	const pair = hasPair(input)
-	const letterBetween = letterBetweenPair(input)
-	// console.log(input, letterBetween, pair)
-
-	return !!pair && !!pair.length && !!letterBetween && !!letterBetween.length
+	return !!hasPair(input)?.length && !!letterBetweenPair(input)?.length
 }
 
 tests.forEach(([testData, expected]) => {
